@@ -1,8 +1,6 @@
 # ReformErrorsObjects
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/reform_errors_objects`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+If you need errors objects instead of dotted errors using trailblazer/reform gem you came to right place.
 
 ## Installation
 
@@ -23,6 +21,48 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+### Complete Description of Issue
+Reform return validation errors in 'dotted' format.
+Instead, I need JSON format as it goes from dry-valdation gem.
+Is there any option or workaround how to achieve that?
+
+
+### Steps to reproduce
+```ruby
+require 'dry-validation'
+require 'reform/form/dry'
+require 'reform'
+
+# incomming hash
+incomming_hash = { id: 22, devices: [{ imei: 21 }, { imei: nil }] }
+
+# reform result
+class DevicesForm < Reform::Form
+  feature Reform::Form::Dry
+
+  property :id
+
+  collection :devices, virtual: true, default: [], populate_if_empty: OpenStruct do
+
+    property :imei
+
+    validation do
+      required(:imei).filled
+    end
+  end
+end
+
+form = DevicesForm.new(OpenStruct.new)
+form.validate(incomming_hash)
+
+# reform validation errors format
+form.errors.objects
+```
+
+
+```ruby
+{:devices=>{1=>{:imei=>["must be filled"]}}}
+```
 
 ## Development
 
