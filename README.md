@@ -20,14 +20,6 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-### Complete Description of Issue
-Reform return validation errors in 'dotted' format.
-Instead, I need JSON format as it goes from dry-valdation gem.
-Is there any option or workaround how to achieve that?
-
-
-### Steps to reproduce
 ```ruby
 require 'dry-validation'
 require 'reform/form/dry'
