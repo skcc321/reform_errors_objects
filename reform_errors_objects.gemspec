@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["skcc321@gmail.com"]
 
   spec.summary       = %q{trailblazer/reform errors objects presenter}
-  spec.description   = %q{extends errors class to with :objects method}
+  spec.description   = %q{extends errors class with :objects method}
   spec.homepage      = "https://github.com/skcc321/reform_errors_objects"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = spec.homepage
