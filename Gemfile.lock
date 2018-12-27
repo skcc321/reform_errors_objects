@@ -1,0 +1,41 @@
+PATH
+  remote: .
+  specs:
+    reform_errors_objects (0.1.1)
+      reform (~> 2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    declarative (0.0.10)
+    declarative-builder (0.1.0)
+      declarative-option (< 0.2.0)
+    declarative-option (0.1.0)
+    disposable (0.4.4)
+      declarative (>= 0.0.9, < 1.0.0)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber (< 0.2.0)
+    minitest (5.11.3)
+    rake (10.5.0)
+    reform (2.2.4)
+      disposable (>= 0.4.1)
+      representable (>= 2.4.0, < 3.1.0)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
+    uber (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.17)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  reform_errors_objects!
+
+BUNDLED WITH
+   1.17.2
