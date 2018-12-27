@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skcc321/reform_errors_objects.svg?branch=master)](https://travis-ci.org/skcc321/reform_errors_objects)
+
 # ReformErrorsObjects
 
 If you need nested errors objects instead of dotted errors using trailblazer/reform gem you came to right place.
