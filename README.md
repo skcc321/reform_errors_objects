@@ -1,6 +1,7 @@
 # ReformErrorsObjects
 
-If you need errors objects instead of dotted errors using trailblazer/reform gem you came to right place.
+If you need nested errors objects instead of dotted errors using trailblazer/reform gem you came to right place.
+For more details, take a look at use case example under #usage section
 
 ## Installation
 
