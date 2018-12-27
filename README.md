@@ -20,21 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
+For instance you have some declared form with nested objects/collections and so on...
+You got request with invalid data.
+And you need to return the same way structured error messages, let's say, in json response.
+
+### so your form looks like:
 ```ruby
 require 'dry-validation'
 require 'reform/form/dry'
 require 'reform'
 
-# incomming hash
-incomming_hash = { id: 22, devices: [{ imei: 21 }, { imei: nil }] }
-
-# reform result
 class DevicesForm < Reform::Form
   feature Reform::Form::Dry
 
   property :id
 
-  collection :devices, virtual: true, default: [], populate_if_empty: OpenStruct do
+  collection :devices, default: [], populate_if_empty: OpenStruct do
 
     property :imei
 
@@ -45,13 +46,25 @@ class DevicesForm < Reform::Form
 end
 
 form = DevicesForm.new(OpenStruct.new)
-form.validate(incomming_hash)
+```
 
+### incomming hash is:
+```ruby
+incomming_hash = { id: 22, devices: [{ imei: 21 }, { imei: nil }] }
+```
+
+### you do validation:
+```ruby
+form.validate(incomming_hash)
+```
+
+### then you can call #objects method on errors instance
+```ruby
 # reform validation errors format
 form.errors.objects
 ```
 
-
+### and it returns stuctured nested errors according you form schema
 ```ruby
 {:devices=>{1=>{:imei=>["must be filled"]}}}
 ```
